@@ -29,7 +29,7 @@
  * @h_mod: param
  * @l_mod: param
  */
-struct Params
+typedef struct Params
 {
 	unsigned int unsign;
 	unsigned int plus_f;
@@ -50,17 +50,20 @@ struct Params
  * @spec: param
  * @f: param
  */
-struct Specifier
+typedef struct Specifier
 {
-	char *spec;
+	char spec;
 	int (*f)(va_list, params_t *);
 } specifier_t;
 
 /* functions*/
 void init_params(params_t *);
-
+int (*get_specifier(char s))(va_list ar, params_t *params);
 int _puts(char *str);
 int _putchar(int c);
+
+int print_c(va_list ar, params_t *params);
+int print_s(va_list ar, params_t *params);
 
 int _printf(const char *format, ...);
 

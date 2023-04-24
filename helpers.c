@@ -1,11 +1,17 @@
 #include "main.h"
 
-int (*get_specifier)(va_list ar, params_t *params)
+/**
+ * get_specifier - function
+ *
+ * @s: param
+ * Return: return the function
+ */
+int (*get_specifier(char s))(va_list ar, params_t *params)
 {
 	int i;
-	specifier_t specifiers = {
-		{'c', NULL},
-		{'s', NULL},
+	specifier_t specifiers[] = {
+		{'c', print_c},
+		{'s', print_s},
 		{'d', NULL},
 		{'i', NULL},
 		{'b', NULL},
@@ -16,11 +22,13 @@ int (*get_specifier)(va_list ar, params_t *params)
 		{'S', NULL},
 		{'p', NULL},
 		{'r', NULL},
-		{'R', NULL}
-	}
+		{'R', NULL}};
 
 	for (i = 0; i < 13; i++)
 	{
-		if (specifiers[i].spec ==)
+		if (specifiers[i].spec == s)
+			return (specifiers[i].f);
 	}
+
+	return (NULL);
 }
