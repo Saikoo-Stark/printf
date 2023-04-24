@@ -10,10 +10,10 @@ int (*get_specifier(char s))(va_list ar, params_t *params)
 {
 	int i;
 	specifier_t specifiers[] = {
-		{"c", print_char},
+		{"c", print_c},
+		{"s", print_string},
 		{"d", print_int},
 		{"i", print_int},
-		{"s", print_string},
 		{"%", print_percent},
 		{"b", print_binary},
 		{"o", print_octal},

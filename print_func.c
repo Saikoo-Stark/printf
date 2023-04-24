@@ -2,22 +2,24 @@
 
 /**
  * print_char - prints character
- * @ap: argument pointer
+ * @ar: argument pointer
  * @params: the parameters struct
  *
  * Return: number chars printed
  */
-int print_char(va_list ap, params_t *params)
+int print_c(va_list ar, params_t *params)
 {
+	unsigned int padding = 1;
+	int sum = 0;
+	int chara = va_arg(ar, int);
 	char pad_char = ' ';
-	unsigned int pad = 1, sum = 0, ch = va_arg(ap, int);
 
 	if (params->minus_f)
-		sum += _putchar(ch);
-	while (pad++ < params->width)
+		sum += _putchar(chara);
+	while (padding++ < params->width)
 		sum += _putchar(pad_char);
 	if (!params->minus_f)
-		sum += _putchar(ch);
+		sum += _putchar(chara);
 	return (sum);
 }
 
