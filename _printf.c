@@ -13,7 +13,7 @@ int _printf(const char *format, ...)
 	va_list ar;
 	unsigned int sum = 0;
 	params_t params = INIT_PARAMS;
-	char *p;
+	char *p, *start;
 
 	va_start(ar, format);
 	if (!format || (format[0] == '%' && !format[1]))
@@ -28,11 +28,19 @@ int _printf(const char *format, ...)
 			sum += _putchar(*p);
 			continue;
 		}
+		start = p;
 		p++;
-		if (*p == '%')
+		while (get_flag(p, &params)) /* while char at p is flag char */
 		{
-			sum += _putchar('%');
+			p++; /* next char */
 		}
+		p = get_width(p, &params, ar);
+		p = get_precision(p, &params, ar);
+		if (get_modifier(p, &params))
+			p++;
+		if (!get_specifier(*p))
+			sum += print_from_to(start, p,
+								 params.l_mod || params.h_mod ? p - 1 : 0);
 
 		if (get_specifier((char)*p))
 		{
