@@ -43,15 +43,15 @@ int print_int(va_list ap, params_t *params)
 }
 
 /**
- * print_s - prints string
- * @ar: argument pointer
+ * print_string - prints string
+ * @ap: argument pointer
  * @params: the parameters struct
  *
  * Return: number chars printed
  */
-int print_s(va_list ar, params_t *params)
+int print_string(va_list ap, params_t *params)
 {
-	char *str = va_arg(ar, char *);
+	char *str = va_arg(ap, char *), pad_char = ' ';
 	unsigned int pad = 0, sum = 0, i = 0, j;
 
 	(void)params;
@@ -72,7 +72,7 @@ int print_s(va_list ar, params_t *params)
 			sum += _puts(str);
 	}
 	while (j++ < params->width)
-		sum += _putchar(' ');
+		sum += _putchar(pad_char);
 	if (!params->minus_f)
 	{
 		if (params->prec != UINT_MAX)
