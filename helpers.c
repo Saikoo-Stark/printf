@@ -27,7 +27,7 @@ int (*get_specifier(char s))(va_list ar, params_t *params)
 
 	for (i = 0; i < 13; i++)
 	{
-		if (specifiers[i].spec == s)
+		if (*specifiers[i].spec == s)
 			return (specifiers[i].f);
 	}
 

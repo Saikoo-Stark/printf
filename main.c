@@ -12,16 +12,12 @@ int main(void)
 
 	int len;
 	int len2;
-	/*
 	unsigned int ui;
 	void *addr;
-	*/
 
 	len = _printf("Let's try to printf a %s %%\n", "hello world");
 	len2 = printf("Let's try to printf a %s %%\n", "hello world");
-	printf("%d %d", len, len2);
-	/*
-
+	printf("%d %d\n", len, len2);
 	ui = (unsigned int)INT_MAX + 1024;
 	addr = (void *)0x7ffe637541f0;
 	_printf("Length:[%d, %i]\n", len, len);
@@ -46,6 +42,5 @@ int main(void)
 	printf("Len:[%d]\n", len2);
 	_printf("Unknown:[%r]\n");
 	printf("Unknown:[%r]\n");
-	*/
 	return (0);
 }
