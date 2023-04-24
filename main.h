@@ -58,6 +58,7 @@ struct Specifier
 
 /* functions*/
 void init_params(params_t *);
+
 int _puts(char *str);
 int _putchar(int c);
 
