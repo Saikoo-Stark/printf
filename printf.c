@@ -34,6 +34,12 @@ int _printf(const char *format, ...)
 		}
 
 		p++;
+
+		if (*p == '%')
+		{
+			sum += _putchar('%');
+		}
+
 		if (get_specifier((char)*p))
 		{
 			int (*fun)(va_list, params_t *) = get_specifier((char)*p);

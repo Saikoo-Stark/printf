@@ -17,8 +17,8 @@ int main(void)
 	void *addr;
 	*/
 
-	len = _printf("Let's try to printf a %s\n", "hello world");
-	len2 = printf("Let's try to printf a %s\n", "hello world");
+	len = _printf("Let's try to printf a %s %%\n", "hello world");
+	len2 = printf("Let's try to printf a %s %%\n", "hello world");
 	printf("%d %d", len, len2);
 	/*
 
