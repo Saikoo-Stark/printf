@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <unistd.h>
+#include <limits.h>
 #define INIT_PARAMS                  \
 	{                                \
 		0, 0, 0, 0, 0, 0, 0, 0, 0, 0 \
@@ -55,6 +56,7 @@ struct Specifier
 } specifier_t;
 
 /* functions*/
+void init_params(params_t *);
 int _puts(char *str);
 int _putchar(int c);
 
