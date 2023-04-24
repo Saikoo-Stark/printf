@@ -12,12 +12,11 @@ int print_c(va_list ar, params_t *params)
 	unsigned int padding = 1;
 	int sum = 0;
 	int chara = va_arg(ar, int);
-	char pad_char = ' ';
 
 	if (params->minus_f)
 		sum += _putchar(chara);
 	while (padding++ < params->width)
-		sum += _putchar(pad_char);
+		sum += _putchar(' ');
 	if (!params->minus_f)
 		sum += _putchar(chara);
 	return (sum);
