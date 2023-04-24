@@ -38,7 +38,7 @@ int (*get_specifier(char s))(va_list ar, params_t *params)
  * get_precision - gets the precision from the format stringfunction
  * @p: param
  * @params: param
- * @ap: param
+ * @ar: param
  *
  * Return: new pointer
  */
