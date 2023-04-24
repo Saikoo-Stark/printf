@@ -10,5 +10,9 @@
 
 int _printf(const char *format, ...)
 {
-	va_list 
+	va_list ar;
+	unsigned int sum = 0;
+	params_t params = INIT_PARAMS;
+
+	va_start(ar, format);
 }
